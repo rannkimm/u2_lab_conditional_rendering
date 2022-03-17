@@ -1,10 +1,14 @@
 import './styles/App.css'
 import { useState } from 'react'
 import Form from './components/Form'
+import LandingPage from './components/LandingPage'
+
+
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState(0)
   const [formValues, setFormValues] = useState({ name: '', age: '', email: '' })
+
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
@@ -13,10 +17,18 @@ const App = () => {
 
   const incrementPage = () => {
     setCurrentPage((prevState) => prevState + 1)
+
+
+
+    
   }
 
+  console.log(currentPage)
+
   return (
+  
     <div className="App">
+        <LandingPage incrementPage={incrementPage}/>
       <Form
         currentPage={currentPage}
         name={formValues.name}

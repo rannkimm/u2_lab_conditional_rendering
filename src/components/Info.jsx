@@ -1,5 +1,7 @@
 const Info = (props) => {
 
+
+
   return (
     <div className="info">
       <h1>Information Form</h1>
